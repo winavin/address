@@ -1,0 +1,39 @@
+{
+    "name": "winavin/address",
+    "description": "Add Address Module for any model laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Navin Patil",
+            "email": "winavin@gmail.com",
+            "homepage": "https://github.com/winavin"
+        }
+    ],
+    "homepage": "https://github.com/winavin/address",
+    "keywords": ["Laravel", "Address"],
+    "require": {
+        "spatie/laravel-sluggable": "^3.0.0"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Winavin\\Address\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Winavin\\Address\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Winavin\\Address\\AddressServiceProvider"
+            ],
+            "aliases": {
+                "Address": "Winavin\\Address\\Facades\\Address"
+            }
+        }
+    }
+}
