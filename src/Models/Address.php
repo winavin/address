@@ -15,6 +15,7 @@ class Address extends Model
         "addressable_id",
         "type",
         "display_name",
+        "contact_person",
         "name",
         "email",
         "mobile",
@@ -26,11 +27,15 @@ class Address extends Model
         "country_id",
         "postal_code",
         "is_default",
+        "is_billing",
         "is_default_billing",
+        "is_shipping",
         "is_default_shipping",
+        "is_pickup",
+        "is_default_pickup",
     ];
 
-    public function ownner(): MorphTo
+    public function owner(): MorphTo
     {
         return $this->morphTo("addressable");
     }

@@ -45,8 +45,12 @@ return new class extends Migration
             $table->foreignIdFor(config('address.models.country'))->nullable()->constraint((new (config('address.models.country')))->getTable());
             $table->string('postal_code')->nullable();
             $table->boolean('is_default');
+            $table->boolean('is_billing'); // for mentioned on the Vouchers
             $table->boolean('is_default_billing');
+            $table->boolean('is_shipping'); // For Customers where Goods are delivered (to Home, Office, etc.) | For couriers To Address
             $table->boolean('is_default_shipping');
+            $table->boolean('is_pickup'); // For Customers where Goods are picked up (Our Stores, warehouses, etc.) | For couriers From Address
+            $table->boolean('is_default_pickup');
             $table->timestamps();
         });
     }
