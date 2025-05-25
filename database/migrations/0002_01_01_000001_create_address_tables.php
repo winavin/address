@@ -32,16 +32,18 @@ return new class extends Migration
             $table->id();
             $table->morphs('addressable');
             $table->string('type'); // Home | Office | Shop | Warehouse
+            $table->string('display_name');
             $table->string('name');
+            $table->string('contact_person')->nullable();
             $table->string('email')->nullable();
             $table->string('mobile')->nullable();
-            $table->string('line_1');
+            $table->string('line_1')->nullable();
             $table->string('line_2')->nullable();
-            $table->string('city');
-            $table->string('district');
-            $table->foreignIdFor(config('address.models.state'))->constraint((new (config('address.models.state')))->getTable());
-            $table->foreignIdFor(config('address.models.country'))->constraint((new (config('address.models.country')))->getTable());
-            $table->string('postal_code');
+            $table->string('city')->nullable();
+            $table->string('district')->nullable();
+            $table->foreignIdFor(config('address.models.state'))->nullable()->constraint((new (config('address.models.state')))->getTable());
+            $table->foreignIdFor(config('address.models.country'))->nullable()->constraint((new (config('address.models.country')))->getTable());
+            $table->string('postal_code')->nullable();
             $table->boolean('is_default');
             $table->boolean('is_default_billing');
             $table->boolean('is_default_shipping');

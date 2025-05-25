@@ -14,6 +14,7 @@ class Address extends Model
         "addressable_type",
         "addressable_id",
         "type",
+        "display_name",
         "name",
         "email",
         "mobile",
